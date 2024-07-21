@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&family=Roboto+Slab:wght@100..900&display=swap');
+
+/* "Roboto Slab", serif;
+"Playwrite NG Modern", cursive; */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f7edf6;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body ::-webkit-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.header {
+    height: 70px;
+    padding: 10px;
+    background-color: lavenderblush;
+    color: #951555;
+    font-family: "Playwrite NG Modern", cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    border-bottom: 2px solid #cccccc;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    /* padding: 30px; */
+    margin: 50px;
+    font-family: "Roboto Slab", serif;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, 200px);
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+
+
+.container li {
+    height: 150px;
+    list-style: none;
+    background-color: #e9d4e8;
+    border-radius: 5px;
+    padding: 15px 20px;
+    width: 200px;
+    /* padding-bottom: 10px; */
+}
+
+.container .note {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.details span {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.note .title {
+    font-family: "Playwrite NG Modern", cursive;
+    font-weight: 900;
+    font-size: 15px;
+    background-color: #ffffff;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 15px 5px;
+}
+
+.note .date {
+    background-color: #951555;
+    color: #ffffff;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: 900;
+    display: flex;
+    justify-content: space-between;
+}
+
+.note .date .settings {
+    cursor: pointer;
+}
+
+.add-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.add-note .icon {
+    font-size: 35px;
+    border: 4px #9f69d2 dashed;
+    color: #9f69d2;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.add-note p {
+    font-family: "Playwrite NG Modern", cursive;
+    color: #000000;
+    font-weight: 800;
+}
+
+.pin-icon {
+    position: relative;
+}
+
+.pin-icon img {
+    position: absolute;
+    transform: scale(2);
+    height: 30px;
+    padding-top: -10px;
+}
+
+.settings {
+    position: relative;
+}
+
+.settings .menu {
+    position: absolute;
+    /* bottom: 0; */
+    border: 4px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.10);
+    width: 100px;
+    border-radius: 5px;
+    padding: 5px;
+    transform: scale(0);
+    transform-origin: top left;
+    transition: transform 0.2s ease;
+}
+
+.settings .menu li {
+    background-color: #951555;
+    color: #f7edf6;
+}
+
+/* .settings:hover .menu {
+    transform: scale(1);
+} */
+
+.settings.show .menu {
+    transform: scale(1);
+}
+
+.settings .menu li {
+    height: 25px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 0;
+    font-family: "Playwrite NG Modern", cursive;
+    font-weight: 600;
+}
+
+.menu li:hover {
+    background-color: #f7edf6;
+    color: #951555;
+}
+
+.menu li i {
+    padding-right: 5px;
+    font-size: 10px;
+}
+
+.popup-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-box .popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    max-width: 400px;
+    width: 100%;
+    /* background: rgba(120, 22, 177, 0.9); */
+    transform: translate(-50%, -50%);
+}
+
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-box .content {
+    width: calc(100% - 10px);
+    background-color: white;
+    border-radius: 5px;
+}
+
+.popup-box .content header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    border-bottom: 1px solid #ccc;
+    background-color: #e9d4e8;
+    color: #951555;
+}
+
+.content header p {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Playwrite NG Modern", cursive;
+}
+
+.content header i {
+    /* color: #ccc; */
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.content header i:hover {
+    background-color: #ccc;
+    color: #951555;
+    border-radius: 5px;
+}
+
+.content form {
+    margin: 15px 25px 35px;
+}
+
+.content form .row {
+    margin-bottom: 20px;
+}
+
+.content form .row label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 20px;
+    font-family: "Roboto Slab", serif;
+}
+
+
+.content form :where(input, textarea) {
+    width: 100%;
+    border: 1px solid #373333;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.content form input {
+    height: 30px;
+}
+
+.content form textarea {
+    height: 200px;
+    resize: none;
+}
+
+.content button {
+    width: 100%;
+    height: 50px;
+    border-bottom: 30px;
+    background-color: #e9d4e8;
+    color: #951555;
+    font-family: "Playwrite NG Modern", cursive;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.popup-box,
+.popup-box .popup {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+.popup-box.show,
+.popup-box.show .popup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.content.error {
+    animation: formSubmittingError infinite;
+    animation-duration: 0.8s;
+}
+
+@keyframes formSubmittingError {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.show-noteContentBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.show-noteContentBox .show-noteContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    max-width: 600px;
+    width: 100%;
+    /* max-height: 600px;
+    height: 100%; */
+    /* background: rgba(120, 22, 177, 0.9); */
+    transform: translate(-50%, -50%);
+}
+
+.show-noteContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-noteContentBox .noteContent {
+    width: calc(100% - 10px);
+    background-color: white;
+    border-radius: 5px;
+}
+
+.show-noteContentBox .noteContent .note-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    border-bottom: 1px solid #ccc;
+}
+
+.noteContent .note-header p {
+    font-size: 35px;
+    font-weight: 800;
+    font-family: "Playwrite NG Modern", cursive;
+    color: #9f69d2;
+}
+
+.noteContent .note-header i {
+    color: #ccc;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.noteContent .note-header i:hover {
+    color: white;
+    background-color: #ccc;
+    border-radius: 10px;
+    padding: 0 2px;
+}
+
+.note-description {
+    height: 400px;
+    padding: 25px 20px;
+    background-color: #e9d4e8;
+}
+
+.n-desc {
+    font-size: 20px;
+    font-family: "Roboto Slab", serif;
+}
+
+
+.note-date {
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid #ccc;
+    padding: 25px 5px;
+}
+
+.note-date li {
+    list-style: none;
+    transform: scale(1);
+    font-family: "Playwrite NG Modern", cursive;
+    font-size: 10px;
+    font-weight: 900;
+    color: #951555;
+}
+
+.note-date li i {
+    font-size: 15px;
+}
+
+.note-date li:hover {
+    transform: scale(2);
+}
+
+
+
+.show-noteContentBox,
+.show-noteContentBox .show-noteContent {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+.show-noteContentBox.show,
+.show-noteContentBox.show .show-noteContent {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+@media(max-width:458px) {
+    .show-noteContentBox .show-noteContent {
+        max-width: 100px;
+        width: 100%;
+    }
+
+    .noteContent .note-header p {
+        font-size: 20px;
+    }
+
+    .n-desc {
+        font-size: 15px;
+        font-family: "Roboto Slab", serif;
+    }
+}
+
+
+@media(max-width:514px) {
+
+    .header {
+        height: 50px;
+        padding: 8px;
+        background-color: lavenderblush;
+        color: #951555;
+        font-family: "Playwrite NG Modern", cursive;
+        font-size: 12px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container .note {
+        width: 400px;
+    }
+
+    .container li {
+        width: 400px;
+    }
+
+    .settings .menu {
+        margin-left: -50px;
+        transform-origin: top right;
+    }
+
+    .pin-icon p {
+        position: relative;
+        transform: scale(2);
+        padding-left: 90px;
+        padding-top: -20px;
+    }
+
+    .show-noteContentBox .show-noteContent {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .noteContent .note-header p {
+        font-size: 20px;
+        font-weight: 800;
+        font-family: "Playwrite NG Modern", cursive;
+        color: #9f69d2;
+    }
+
+    .n-desc {
+        font-size: 15px;
+        font-family: "Roboto Slab", serif;
+    }
+}
+
+@media(min-width:514px) {
+    .show-noteContentBox .show-noteContent {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .noteContent .note-header p {
+        font-size: 20px;
+    }
+
+    .n-desc {
+        font-size: 15px;
+        font-family: "Roboto Slab", serif;
+    }
+}
+
+@media(min-width:768px) {
+    .show-noteContentBox .show-noteContent {
+        max-width: 700px;
+        width: 100%;
+    }
+
+    .noteContent .note-header p {
+        font-size: 25px;
+    }
+
+    .n-desc {
+        font-size: 20px;
+        font-family: "Roboto Slab", serif;
+    }
+}
+
+@media(min-width:1024px) {
+    .show-noteContentBox .show-noteContent {
+        max-width: 900px;
+        width: 100%;
+    }
+
+    .noteContent .note-header p {
+        font-size: 30px;
+    }
+
+    .n-desc {
+        font-size: 25px;
+        font-family: "Roboto Slab", serif;
+    }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- for iconscout -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <!-- for jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <title>My Notes 📝</title>
+  </head>
+
+  <body>
+    <!-- for header -->
+    <div class="header">
+      <h2>Hii,Create your note with me...😊😃</h2>
+    </div>
+
+    <!-- for popUp -->
+    <div class="popup-box">
+      <div class="popup">
+        <div class="content">
+          <header>
+            <p>Add a new Note</p>
+            <i class="uil uil-times"></i>
+          </header>
+          <form action="#">
+            <div class="row title">
+              <label>Title</label>
+              <input type="text" name="" id="" />
+            </div>
+            <div class="row description">
+              <label>Description</label>
+              <textarea name="" id=""></textarea>
+            </div>
+            <button>Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- for showing note content -->
+    <div class="show-noteContentBox">
+      <div class="show-noteContent">
+        <div class="noteContent">
+          <header class="note-header">
+            <p class="note-title">Hello, How are you?</p>
+            <i class="uil uil-times"></i>
+          </header>
+          <div class="note-description">
+            <p class="n-desc">Hello bro, how are you? I'm good.</p>
+          </div>
+          <div class="note-date">
+            <li>
+              <i class="uil uil-clock" title="created time"></i
+              ><span>July 5, 2024</span>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- for main thing -->
+    <div class="container">
+      <li class="add-note">
+        <div class="icon"><i class="uil uil-plus"></i></div>
+        <p>Add new note</p>
+      </li>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
