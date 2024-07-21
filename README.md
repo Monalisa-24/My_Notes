@@ -3,7 +3,7 @@ I've created a note app using HTML5, CSS3, Vanilla js on which I can write, edit
 
 
 ![Screenshot (938)](https://github.com/user-attachments/assets/f1709338-370d-4ee1-91ae-678367fbf9be)
-# Adding note clicking Add New Note
+# Adding note clicking "Add new note"
 ![Screenshot (939)](https://github.com/user-attachments/assets/cc9710da-3bc3-4538-9150-13f94fbdbe1a)
 # Displaying notes
 ![Screenshot (940)](https://github.com/user-attachments/assets/af7a1de6-3870-4ff9-b5b0-4cf2f77049c8)
